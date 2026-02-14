@@ -5,14 +5,15 @@
 name: Build and deploy Python app to Azure Web App - game-ops
 
 on:
-  permissions:
-    id-token: write
-    contents: read
   push:
     branches:
       - SecureCloudVault
   workflow_dispatch:
 
+permissions:
+    id-token: write
+    contents: read
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -77,4 +78,5 @@ jobs:
           slot-name: 'Production'
 
           
+
 
